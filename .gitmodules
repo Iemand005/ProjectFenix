@@ -1,0 +1,6 @@
+[submodule "FenixEngine"]
+	path = FenixEngine
+	url = https://github.com/Iemand005/FenixEngine
+[submodule "Foxcraft"]
+	path = Foxcraft
+	url = https://github.com/Iemand005/Foxcraft
