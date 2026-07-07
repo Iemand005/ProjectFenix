@@ -7,3 +7,6 @@
 [submodule "Cake"]
 	path = Cake
 	url = https://github.com/Iemand005/Cake
+[submodule "ShaderSavers"]
+	path = ShaderSavers
+	url = https://github.com/Iemand005/ShaderSavers
