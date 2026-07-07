@@ -4,3 +4,6 @@
 [submodule "Foxcraft"]
 	path = Foxcraft
 	url = https://github.com/Iemand005/Foxcraft
+[submodule "Cake"]
+	path = Cake
+	url = https://github.com/Iemand005/Cake
