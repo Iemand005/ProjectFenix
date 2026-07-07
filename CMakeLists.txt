@@ -8,3 +8,4 @@ add_subdirectory(FenixEngine)
 
 add_subdirectory(Foxcraft)
 add_subdirectory(Cake)
+add_subdirectory(ShaderSavers)
