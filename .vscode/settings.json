@@ -1,0 +1,18 @@
+{
+    "C_Cpp.files.exclude": {
+        "**/external/**": true,
+        "**/include/**": true,
+    },
+    "files.watcherExclude": {
+		"**/external/**": true,
+        "**/include/**": true,
+    },
+    "search.exclude": {
+		"**/external/**": true,
+        "**/include/**": true,
+    },
+    "files.exclude": {
+		"**/external/**": true,
+        "**/include/**": true,
+	}
+}
