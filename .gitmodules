@@ -10,3 +10,6 @@
 [submodule "ShaderSavers"]
 	path = ShaderSavers
 	url = https://github.com/Iemand005/ShaderSavers
+[submodule "Atmosphere"]
+	path = Atmosphere
+	url = https://github.com/Iemand005/Atmosphere
