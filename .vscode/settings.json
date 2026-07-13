@@ -1,4 +1,6 @@
 {
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": false,
     "C_Cpp.files.exclude": {
         "**/external/**": true,
         "**/include/**": true,
