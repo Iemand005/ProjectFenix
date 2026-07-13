@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(EngineMetaProject)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Force a consistent MSVC runtime across all subprojects to avoid
 # linker mismatches (LNK2038) between static and dynamic CRTs.
 if(MSVC)
