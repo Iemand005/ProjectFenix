@@ -2,17 +2,21 @@
     "C_Cpp.files.exclude": {
         "**/external/**": true,
         "**/include/**": true,
+        "**/build/**": true,
     },
     "files.watcherExclude": {
 		"**/external/**": true,
         "**/include/**": true,
+        "**/build/**": true,
     },
     "search.exclude": {
 		"**/external/**": true,
         "**/include/**": true,
+        "**/build/**": true,
     },
     "files.exclude": {
 		"**/external/**": true,
         "**/include/**": true,
+        "**/build/**": true,
 	}
 }
