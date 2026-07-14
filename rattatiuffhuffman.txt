@@ -1,0 +1,8 @@
+  File: /home/lasse/stonkalldayandimawakenoweeerstupidassdieafuckassninidandsemanoesreepergivupmanreaderooujp.mitm
+  Size: 391811764 	Blocks: 765280     IO Block: 4096   regular file
+Device: 259,4	Inode: 3966641     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   lasse)   Gid: ( 1000/   lasse)
+Access: 2026-07-14 19:44:13.074165022 +0200
+Modify: 2026-06-23 20:07:25.568687199 +0200
+Change: 2026-06-23 20:07:25.568687199 +0200
+ Birth: 2026-06-23 17:07:57.554523530 +0200
