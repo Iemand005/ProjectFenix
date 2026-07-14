@@ -12,8 +12,8 @@ endif()
 
 # set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build all libraries as shared" FORCE)
 
-add_subdirectory(FenixEngine)
-
+# Don't add FenixEngine directly here — each project adds it via if(NOT TARGET Engine),
+# so the first project to run controls whether Jolt is included.
 
 add_subdirectory(Foxcraft)
 add_subdirectory(Cake)

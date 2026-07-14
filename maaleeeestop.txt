@@ -1,0 +1,8 @@
+  File: /home/lasse/so wereklesss kakka save me drownin in this madneks.mozilla.7z
+  Size: 105967768 	Blocks: 206984     IO Block: 4096   regular file
+Device: 259,4	Inode: 3982044     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   lasse)   Gid: ( 1000/   lasse)
+Access: 2026-07-14 19:44:23.939079145 +0200
+Modify: 2025-05-11 17:06:14.383816240 +0200
+Change: 2025-05-11 17:06:14.383816240 +0200
+ Birth: 2025-05-11 17:05:11.001301101 +0200
