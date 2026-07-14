@@ -17,7 +17,7 @@
         "**/build/**": true,
     },
     "files.exclude": {
-		"**/external/**": true,
+		// "**/external/**": true,
         "**/include/**": true,
         "**/build/**": true,
 	},
