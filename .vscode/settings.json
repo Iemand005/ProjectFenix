@@ -23,5 +23,6 @@
 	},
     "C_Cpp.intelliSenseCacheSize": 512,
     "C_Cpp.maxConcurrentThreads": 4,
-    "C_Cpp.errorLimit": 100
+    "C_Cpp.errorLimit": 100,
+    "output.smartScroll.enabled": false
 }
