@@ -13,3 +13,6 @@
 [submodule "Atmosphere"]
 	path = Atmosphere
 	url = https://github.com/Iemand005/Atmosphere
+[submodule "Tunnel"]
+	path = Tunnel
+	url = https://github.com/Iemand005/Tunnel
