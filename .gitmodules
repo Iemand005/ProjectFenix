@@ -16,3 +16,6 @@
 [submodule "Tunnel"]
 	path = Tunnel
 	url = https://github.com/Iemand005/Tunnel
+[submodule "Labyrinth"]
+	path = Labyrinth
+	url = https://github.com/Iemand005/Labyrinth
