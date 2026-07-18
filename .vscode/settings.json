@@ -1,30 +1,33 @@
 {
-    "editor.indentSize": "tabSize",
-    "editor.insertSpaces": false,
-    "C_Cpp.files.exclude": {
-        // "**/external/**": true,
-        "**/include/**": true,
-        "**/build/**": true,
-    },
-    "files.watcherExclude": {
-		"**/external/**": true,
-        "**/include/**": true,
-        "**/build/**": true,
-    },
-    "search.exclude": {
-		"**/external/**": true,
-        "**/include/**": true,
-        "**/build/**": true,
-    },
-    "files.exclude": {
+	"editor.indentSize": "tabSize",
+	"editor.insertSpaces": false,
+	"C_Cpp.files.exclude": {
 		// "**/external/**": true,
-        "**/include/**": true,
-        "**/build/**": true,
+		"**/include/**": true,
+		"**/build/**": true,
 	},
-    "C_Cpp.intelliSenseCacheSize": 512,
-    "C_Cpp.maxConcurrentThreads": 4,
-    "C_Cpp.errorLimit": 100,
-    "output.smartScroll.enabled": false,
-    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
-    "cmake.generator": "Ninja"
+	"files.watcherExclude": {
+		"**/external/**": true,
+		"**/include/**": true,
+		"**/build/**": true,
+	},
+	"search.exclude": {
+		"**/external/**": true,
+		"**/include/**": true,
+		"**/build/**": true,
+	},
+	"files.exclude": {
+		// "**/external/**": true,
+		"**/include/**": true,
+		"**/build/**": true,
+	},
+	"C_Cpp.intelliSenseCacheSize": 512,
+	"C_Cpp.maxConcurrentThreads": 4,
+	"C_Cpp.errorLimit": 100,
+	"output.smartScroll.enabled": false,
+	"cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+	"cmake.generator": "Ninja",
+	"cmake.configureArgs": [
+		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+	]
 }
