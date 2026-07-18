@@ -25,9 +25,13 @@
 	"C_Cpp.maxConcurrentThreads": 4,
 	"C_Cpp.errorLimit": 100,
 	"output.smartScroll.enabled": false,
-	"cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+	// "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
 	"cmake.generator": "Ninja",
 	"cmake.configureArgs": [
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+	],
+	"clangd.arguments": [
+		"--compile-commands-dir=build"
 	]
+
 }
