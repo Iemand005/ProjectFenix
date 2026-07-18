@@ -25,5 +25,6 @@
     "C_Cpp.maxConcurrentThreads": 4,
     "C_Cpp.errorLimit": 100,
     "output.smartScroll.enabled": false,
-    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "cmake.generator": "Ninja"
 }
