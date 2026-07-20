@@ -3,7 +3,7 @@ project(EngineMetaProject)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
+# set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
 
 # Force a consistent MSVC runtime across all subprojects to avoid
 # linker mismatches (LNK2038) between static and dynamic CRTs.
