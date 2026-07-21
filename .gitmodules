@@ -19,3 +19,6 @@
 [submodule "Labyrinth"]
 	path = Labyrinth
 	url = https://github.com/Iemand005/Labyrinth
+[submodule "Racing"]
+	path = Racing
+	url = https://github.com/Iemand005/Racing
