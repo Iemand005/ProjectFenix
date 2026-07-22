@@ -22,3 +22,6 @@
 [submodule "FoxRacing"]
 	path = FoxRacing
 	url = https://github.com/Iemand005/FoxRacing
+[submodule "FenixEditor"]
+	path = FenixEditor
+	url = https://github.com/Iemand005/FenixEditor
