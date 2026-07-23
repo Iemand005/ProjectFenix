@@ -36,5 +36,5 @@
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**"
 	],
-	"git.autoRepositoryDetection": "openEditors" 
+	// "git.autoRepositoryDetection": "openEditors" 
 }
