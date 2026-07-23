@@ -34,7 +34,8 @@
 		"--compile-commands-dir=build"
 	],
 	"git.ignoredRepositories": [
-		"FenixEngine/external/**"
+		"FenixEngine/external/**",
+		"FenixEngine/external"
 	],
-	// "git.autoRepositoryDetection": "openEditors" 
+	"git.autoRepositoryDetection": "openEditors" 
 }
