@@ -32,6 +32,9 @@
 	],
 	"clangd.arguments": [
 		"--compile-commands-dir=build"
-	]
-
+	],
+	"git.ignoredRepositories": [
+		"FenixEngine/external/**"
+	],
+	"git.autoRepositoryDetection": "openEditors" 
 }
