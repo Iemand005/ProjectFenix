@@ -23,7 +23,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # linker mismatches (LNK2038) between static and dynamic CRTs.
 if(MSVC)
 	# Use dynamic CRT for Release and Debug (uses /MD for Release and /MDd for Debug)
-	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL" CACHE STRING "MSVC runtime" FORCE)
+	# set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL" CACHE STRING "MSVC runtime" FORCE)
+	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE STRING "MSVC runtime" FORCE)
 endif()
 
 # set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build all libraries as shared" FORCE)
