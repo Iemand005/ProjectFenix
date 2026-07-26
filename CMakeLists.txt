@@ -12,8 +12,19 @@ if(MSVC)
     
     # Voeg alleen de absolute basis toe (Waarschuwingen GEEN fouten, normale waarschuwingen)
     add_compile_options(/W3 /WX-)
+
+    # Exclude Windows 10-only default libs that pull in api-ms-win DLLs
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:onecore.lib /NODEFAULTLIB:onecoreuap.lib /NODEFAULTLIB:mincore.lib /NODEFAULTLIB:api-ms-win-core-libraryloader-l1-2-0.lib" CACHE STRING "" FORCE)
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /NODEFAULTLIB:onecore.lib /NODEFAULTLIB:onecoreuap.lib /NODEFAULTLIB:mincore.lib /NODEFAULTLIB:api-ms-win-core-libraryloader-l1-2-0.lib" CACHE STRING "" FORCE)
 endif()
 
+# Target Windows 7 for ALL subprojects — prevents api-ms-win-* DLL imports
+# by telling the Windows 10 SDK headers/libs to use kernel32.dll directly.
+add_compile_definitions(
+    _WIN32_WINNT=0x0601
+    WINVER=0x0601
+    NTDDI_VERSION=0x06010000
+)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -28,6 +39,15 @@ if(MSVC)
 endif()
 
 # set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build all libraries as shared" FORCE)
+
+# Windows 7 compatibility shim — forwards api-ms-win imports to kernel32.dll
+add_subdirectory(FenixEngine/external/win7compat)
+
+# Prepend our custom kernel32_win7.lib directory so the linker finds it FIRST,
+# before the Windows 10 SDK's kernel32.lib (which forwards through api-ms-win DLLs).
+if(MSVC)
+    link_directories(BEFORE "${CMAKE_BINARY_DIR}/FenixEngine/external/win7compat")
+endif()
 
 # Don't add FenixEngine directly here — each project adds it via if(NOT TARGET Engine),
 # so the first project to run controls whether Jolt is included.
