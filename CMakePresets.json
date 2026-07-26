@@ -1,0 +1,17 @@
+{
+	"version": 3,
+	"configurePresets": [
+		{
+			"name": "windows-7-ninja",
+			"displayName": "Windows 7 (v141 Compiler via Ninja)",
+			"description": "Directe compilatie voor Windows 7 in build/win7 map via v141 tools",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/win7",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release",
+				"CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+				"CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe"
+			}
+		}
+	]
+}

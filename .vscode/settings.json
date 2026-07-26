@@ -26,7 +26,7 @@
 	"C_Cpp.errorLimit": 100,
 	"output.smartScroll.enabled": false,
 	// "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
-	"cmake.generator": "Ninja",
+	// "cmake.generator": "Ninja",
 	"cmake.configureArgs": [
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	],
@@ -37,5 +37,11 @@
 		"FenixEngine/external/**",
 		"FenixEngine/external"
 	],
-	"git.autoRepositoryDetection": "openEditors" 
+	"git.autoRepositoryDetection": "openEditors" ,
+
+	"cmake.generator": "Visual Studio 18 2026",
+	"cmake.configureSettings": {
+		// "CMAKE_GENERATOR_TOOLSET": "v141"
+		"CMAKE_GENERATOR_TOOLSET": "v141,version=14.16.27023"
+	}
 }
