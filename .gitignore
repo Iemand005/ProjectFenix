@@ -3,3 +3,4 @@ build
 *.gone
 .cache
 .qtcreator
+out
