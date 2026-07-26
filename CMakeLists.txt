@@ -1,4 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
+
+# Nuke Windows API-set injection from the ground up — must be BEFORE project()
+set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX "${CMAKE_CURRENT_SOURCE_DIR}/cxx_override.cmake")
+
 project(EngineMetaProject)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -58,6 +62,7 @@ add_subdirectory(ShaderSavers)
 add_subdirectory(Atmosphere)
 add_subdirectory(Labyrinth)
 add_subdirectory(FoxRacing)
+add_subdirectory(FenixWeb)
 if(Qt6_FOUND)
 	add_subdirectory(FenixEditor)
 else()
