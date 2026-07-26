@@ -1,6 +1,17 @@
 cmake_minimum_required(VERSION 3.15)
 project(EngineMetaProject)
 
+if(MSVC)
+    # Forceer de vlaggen leeg op Windows/MSVC niveau
+    set(CMAKE_CXX_FLAGS "" CACHE STRING "" FORCE)
+    set(CMAKE_CXX_FLAGS_DEBUG "" CACHE STRING "" FORCE)
+    set(CMAKE_CXX_FLAGS_RELEASE "" CACHE STRING "" FORCE)
+    
+    # Voeg alleen de absolute basis toe (Waarschuwingen GEEN fouten, normale waarschuwingen)
+    add_compile_options(/W3 /WX-)
+endif()
+
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
@@ -29,3 +40,11 @@ else()
 	message(WARNING "Qt6 was not found. Skipping the Qt-dependent project, but configuring everything else.")
 endif()
 # add_subdirectory(Tunnel)
+
+
+if(MSVC)
+    # Verwijdert /WX en /Wall hardhandig uit de globale build-vlaggen
+    string(REPLACE "/WX" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "/Wall" "/W3" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" CACHE STRING "" FORCE)
+endif()

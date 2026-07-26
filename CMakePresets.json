@@ -13,7 +13,9 @@
 				"CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
 				"SDL_WERROR": "OFF",
 				"CMAKE_COMPILE_WARNING_AS_ERROR": "OFF",
-				"OVERRIDE_MSVC_FLAGS_AND_WARNINGS": "OFF"
+				"OVERRIDE_MSVC_FLAGS_AND_WARNINGS": "OFF",
+				"CMAKE_CXX_FLAGS": "/WX-",
+				"CMAKE_C_FLAGS": "/WX-"
 			},
 			"environment": {
 				"INCLUDE": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.16.27023\\include;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\winrt",
