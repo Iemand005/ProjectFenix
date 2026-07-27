@@ -58,6 +58,7 @@ endif()
 
 add_subdirectory(Foxcraft)
 add_subdirectory(Cake)
+add_subdirectory(Tunnel)
 add_subdirectory(ShaderSavers)
 add_subdirectory(Atmosphere)
 add_subdirectory(Labyrinth)

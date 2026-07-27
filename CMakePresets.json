@@ -62,7 +62,7 @@
 			"configuration": "Debug"
 		},
 		{
-			"name": "EmscriptenRelease",
+			"name": "Emscripten Release",
 			"configurePreset": "Emscripten",
 			"configuration": "Release"
 		}

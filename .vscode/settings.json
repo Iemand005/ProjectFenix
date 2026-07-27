@@ -14,12 +14,12 @@
 	"search.exclude": {
 		"**/external/**": true,
 		"**/include/**": true,
-		"**/build/**": true,
+		// "**/build/**": true,
 	},
 	"files.exclude": {
 		// "**/external/**": true,
 		"**/include/**": true,
-		"**/build/**": true,
+		// "**/build/**": true,
 	},
 	"C_Cpp.intelliSenseCacheSize": 512,
 	"C_Cpp.maxConcurrentThreads": 4,
