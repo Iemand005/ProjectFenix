@@ -38,6 +38,15 @@
 				"CMAKE_C_COMPILER": "cl.exe",
 				"CMAKE_CXX_COMPILER": "cl.exe"
 			}
+		},
+		{
+			"name": "Emscripten",
+			"displayName": "Emscripten",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build-emscripten",
+			"cacheVariables": {
+				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+			}
 		}
 	],
 	"buildPresets": [
@@ -46,6 +55,16 @@
 			"displayName": "Visual Studio Community 2026 Release - amd64 - Debug",
 			"configurePreset": "Latest MSVC",
 			"configuration": "Debug"
+		},
+		{
+			"name": "Emscripten Debug",
+			"configurePreset": "Emscripten",
+			"configuration": "Debug"
+		},
+		{
+			"name": "EmscriptenRelease",
+			"configurePreset": "Emscripten",
+			"configuration": "Release"
 		}
 	]
 }
