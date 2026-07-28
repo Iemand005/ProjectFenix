@@ -38,9 +38,10 @@ function(configure_emscripten_target TARGET_NAME RESOURCE_DIR)
         # Force the output to be an HTML file instead of .js or .wasm
         set_target_properties(${TARGET_NAME} PROPERTIES SUFFIX ".html")
 
-        # Dynamically attach the target's unique resource folder
+        # Convert backslashes to forward slashes for Emscripten file packager on Windows
+        file(TO_CMAKE_PATH "${RESOURCE_DIR}" _NORM_RES_DIR)
         target_link_options(${TARGET_NAME} PRIVATE 
-            "--preload-file ${RESOURCE_DIR}@resources"
+            "--preload-file ${_NORM_RES_DIR}@resources"
         )
     endif()
 endfunction()
