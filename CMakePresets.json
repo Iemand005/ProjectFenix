@@ -40,12 +40,23 @@
 			}
 		},
 		{
-			"name": "Emscripten",
-			"displayName": "Emscripten",
+			"name": "Emscripten-Debug",
+			"displayName": "Emscripten Debug",
 			"generator": "Ninja",
-			"binaryDir": "${sourceDir}/build/emscripten",
+			"binaryDir": "${sourceDir}/build/emscripten-debug",
 			"cacheVariables": {
-				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		},
+		{
+			"name": "Emscripten-Release",
+			"displayName": "Emscripten Release (optimized, no symbols)",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/emscripten-release",
+			"cacheVariables": {
+				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+				"CMAKE_BUILD_TYPE": "Release"
 			}
 		}
 	],
@@ -57,14 +68,14 @@
 			"configuration": "Debug"
 		},
 		{
-			"name": "Emscripten Debug",
-			"configurePreset": "Emscripten",
-			"configuration": "Debug"
+			"name": "Emscripten-Debug",
+			"displayName": "Emscripten Debug",
+			"configurePreset": "Emscripten-Debug"
 		},
 		{
-			"name": "Emscripten Release",
-			"configurePreset": "Emscripten",
-			"configuration": "Release"
+			"name": "Emscripten-Release",
+			"displayName": "Emscripten Release (optimized)",
+			"configurePreset": "Emscripten-Release"
 		}
 	]
 }
