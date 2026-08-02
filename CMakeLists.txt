@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.16)
 
 # Nuke Windows API-set injection from the ground up — must be BEFORE project()
 set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX "${CMAKE_CURRENT_SOURCE_DIR}/cxx_override.cmake")
@@ -16,6 +16,21 @@ if(MSVC)
     
     # Voeg alleen de absolute basis toe (Waarschuwingen GEEN fouten, normale waarschuwingen)
     add_compile_options(/W3 /WX-)
+
+    # --- Compile-time optimizations for MSVC ---
+    # Multiprocessor compilation (cl /MP) — parallelizes compilation within a target
+    add_compile_options(/MP)
+    # Conformant preprocessor everywhere so PCH + sources never disagree
+    # (only on MSVC 19.25+ / VS2019 16.5+; v141/14.16 doesn't support it)
+    if(MSVC_VERSION GREATER_EQUAL 1925)
+        add_compile_options(/Zc:preprocessor)
+    endif()
+    # Disable MSVC module scanning overhead (no C++20 modules are used)
+    set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
+    # Skip minimal-rebuild bookkeeping
+    add_compile_options(/Gm-)
+    # Large objects (needed once unity builds merge many .cpp files)
+    add_compile_options(/bigobj)
 
     # Exclude Windows 10-only default libs that pull in api-ms-win DLLs
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:onecore.lib /NODEFAULTLIB:onecoreuap.lib /NODEFAULTLIB:mincore.lib /NODEFAULTLIB:api-ms-win-core-libraryloader-l1-2-0.lib" CACHE STRING "" FORCE)
