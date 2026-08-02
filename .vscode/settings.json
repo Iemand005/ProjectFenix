@@ -57,4 +57,6 @@
 	// 	// "CMAKE_GENERATOR_TOOLSET": "v141"
 	// 	"CMAKE_GENERATOR_TOOLSET": "v141,version=14.16.27023"
 	// }
+
+	"git.detectSubmodulesLimit": 30
 }
