@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Nuke Windows API-set injection from the ground up — must be BEFORE project()
-set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX "${CMAKE_CURRENT_SOURCE_DIR}/cxx_override.cmake")
+#set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX "${CMAKE_CURRENT_SOURCE_DIR}/cxx_override.cmake")
 
 project(EngineMetaProject)
 

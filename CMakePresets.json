@@ -28,7 +28,7 @@
 		{
 			"name": "Latest MSVC",
 			"displayName": "Visual Studio Community 2026 Release - amd64",
-			"description"z: "Using compilers for Visual Studio 18 2026 (x64 architecture)",
+			"description": "Using compilers for Visual Studio 18 2026 (x64 architecture)",
 			"generator": "Visual Studio 18 2026",
 			"toolset": "host=x64",
 			"architecture": "x64",
