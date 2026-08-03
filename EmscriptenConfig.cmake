@@ -41,7 +41,7 @@ function(setup_emscripten_target target_name)
         -sMAX_WEBGL_VERSION=2
         -sMIN_WEBGL_VERSION=2
         -sFORCE_FILESYSTEM=1
-        -sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap
+        -sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap,HEAPF32,HEAPU8
         -sEXPORTED_FUNCTIONS=_main,_emscripten_file_dialog_callback,_malloc,_free
     )
 
