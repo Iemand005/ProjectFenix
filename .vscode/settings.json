@@ -58,5 +58,6 @@
 	// 	"CMAKE_GENERATOR_TOOLSET": "v141,version=14.16.27023"
 	// }
 
-	"git.detectSubmodulesLimit": 30
+	"git.detectSubmodulesLimit": 30,
+	"liveServer.settings.port": 5502
 }
