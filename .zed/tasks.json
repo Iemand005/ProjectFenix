@@ -1,0 +1,7 @@
+[
+  {
+    "label": "CMake: Build Project",
+    "command": "cmake --build build",
+    "description": "Compiles the C++ project automatically"
+  }
+]
