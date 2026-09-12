@@ -47,6 +47,8 @@ add_compile_definitions(
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(FE_EXCLUDE_OPENXR ON CACHE BOOL "Exclude OpenXR from the build" FORCE)
+
 # set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
 
 # Force a consistent MSVC runtime across all subprojects to avoid
