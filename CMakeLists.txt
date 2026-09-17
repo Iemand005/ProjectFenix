@@ -49,6 +49,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(FE_EXCLUDE_OPENXR ON CACHE BOOL "Exclude OpenXR from the build" FORCE)
 
+# The meta build shares one Engine target, so the audio visualiser needs kissfft.
+# Several game subprojects set FE_EXCLUDE_* cache variables with FORCE, which
+# poisons every sibling on the next reconfigure. Pin the canonical desktop value
+# here before any subproject is added. (SDL_WASAPI is left to the active preset:
+# the Windows 7 preset turns it off, everything else uses the SDL default ON.)
+if(NOT EMSCRIPTEN)
+    set(FE_EXCLUDE_KISSFFT OFF CACHE BOOL "Exclude kissfft from the build" FORCE)
+endif()
+
 # set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
 
 # Force a consistent MSVC runtime across all subprojects to avoid
