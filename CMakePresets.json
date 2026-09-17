@@ -36,7 +36,11 @@
 			"cacheVariables": {
 				"CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
 				"CMAKE_C_COMPILER": "cl.exe",
-				"CMAKE_CXX_COMPILER": "cl.exe"
+				"CMAKE_CXX_COMPILER": "cl.exe",
+				"CMAKE_C_FLAGS_RELEASE": "/O2 /Ob2 /GL /Gw",
+				"CMAKE_CXX_FLAGS_RELEASE": "/O2 /Ob2 /GL /Gw",
+				"CMAKE_EXE_LINKER_FLAGS_RELEASE": "/LTCG /OPT:REF /OPT:ICF",
+				"CMAKE_SHARED_LINKER_FLAGS_RELEASE": "/LTCG /OPT:REF /OPT:ICF"
 			}
 		},
 		{
@@ -78,10 +82,11 @@
 			"configurePreset": "Emscripten-Release"
 		},
 		{
-			"name": "Release",
-			"description": "",
-			"displayName": "",
-			"configurePreset": "Latest MSVC"
+			"name": "MSVC-Release",
+			"description": "Optimized Release build with MSVC (no debug info)",
+			"displayName": "MSVC Release",
+			"configurePreset": "Latest MSVC",
+			"configuration": "Release"
 		}
 	]
 }
