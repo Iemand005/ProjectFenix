@@ -76,6 +76,12 @@
 			"name": "Emscripten-Release",
 			"displayName": "Emscripten Release (optimized)",
 			"configurePreset": "Emscripten-Release"
+		},
+		{
+			"name": "Release",
+			"description": "",
+			"displayName": "",
+			"configurePreset": "Latest MSVC"
 		}
 	]
 }
