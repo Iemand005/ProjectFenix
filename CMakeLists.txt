@@ -47,13 +47,16 @@ add_compile_definitions(
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(FE_EXCLUDE_OPENXR ON CACHE BOOL "Exclude OpenXR from the build" FORCE)
+option(FE_EXCLUDE_OPENXR "Exclude OpenXR from the build" OFF)
 
 # The Engine adds FE_EXCLUDE_* as directory-scoped defines, so sibling game
 # targets (Foxcraft -> libmain.so) never inherit them. Enforce globally so the
 # GLFW/Vulkan/OpenXR headers never enter game-target translation units.
 if(ANDROID)
-    add_compile_definitions(FE_EXCLUDE_GLFW FE_EXCLUDE_VULKAN FE_EXCLUDE_OPENXR)
+    add_compile_definitions(FE_EXCLUDE_GLFW FE_EXCLUDE_VULKAN)
+    if(FE_EXCLUDE_OPENXR)
+        add_compile_definitions(FE_EXCLUDE_OPENXR)
+    endif()
 endif()
 
 # The meta build shares one Engine target, so the audio visualiser needs kissfft.
