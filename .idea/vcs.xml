@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Atmosphere" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Cake" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEditor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/JoltPhysics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/OpenXR-SDK" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/SDL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/cgltf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/kissfft" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixEngine/external/openvr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FenixWeb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FoxRacing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Foxcraft" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Labyrinth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ShaderSavers" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Tunnel" vcs="Git" />
+  </component>
+</project>
