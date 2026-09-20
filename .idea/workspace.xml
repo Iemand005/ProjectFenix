@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73d0b42-d6ea-447c-99e5-3c9e102d4085" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Android/Foxcraft/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/Foxcraft/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FenixEngine" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FenixEngine/src/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine/src/Engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foxcraft" beforeDir="false" afterPath="$PROJECT_DIR$/Foxcraft" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
