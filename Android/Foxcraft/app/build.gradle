@@ -53,6 +53,13 @@ def syncNativeLibs = tasks.register('syncNativeLibs') {
             from file("${arm64BuildDir}/Foxcraft/libmain.so")
             into arm64Out
         }
+        def arm64OpenXR = file("${arm64BuildDir}/bin/openxr/src/loader/libopenxr_loader.so")
+        if (arm64OpenXR.exists()) {
+            copy {
+                from arm64OpenXR
+                into arm64Out
+            }
+        }
         v7aOut.mkdirs()
         copy {
             from file("${v7aBuildDir}/bin/sdl/libSDL3.so")
@@ -61,6 +68,13 @@ def syncNativeLibs = tasks.register('syncNativeLibs') {
         copy {
             from file("${v7aBuildDir}/Foxcraft/libmain.so")
             into v7aOut
+        }
+        def v7aOpenXR = file("${v7aBuildDir}/bin/openxr/src/loader/libopenxr_loader.so")
+        if (v7aOpenXR.exists()) {
+            copy {
+                from v7aOpenXR
+                into v7aOut
+            }
         }
     }
 }
