@@ -4,13 +4,13 @@
     android:versionName="1.0"
     android:installLocation="auto">
 
-    <!-- OpenGL ES 3.2 (required for modern OpenXR runtimes) -->
-    <uses-feature android:glEsVersion="0x00030002" android:required="true" />
+    <!-- OpenGL ES 3.1 (supported by Android 5.0+ and Meta Quest) -->
+    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
 
-    <!-- VR Features for Quest / generic Android VR -->
+    <!-- VR Features for Quest / generic Android VR (required=false so normal phones can install) -->
     <uses-feature
         android:name="android.hardware.vr.headtracking"
-        android:required="true"
+        android:required="false"
         android:version="1" />
     <uses-feature
         android:name="android.software.vr.mode"
