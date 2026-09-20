@@ -3,7 +3,8 @@ plugins {
 }
 
 def projectFenix = rootProject.projectDir.parentFile.parentFile
-def nativeBuildDir = file("${projectFenix}/build/android-arm64")
+def arm64BuildDir = file("${projectFenix}/build/android-arm64")
+def v7aBuildDir = file("${projectFenix}/build/android-armeabi-v7a")
 def resourcesDir = file("${projectFenix}/Foxcraft/resources")
 
 android {
@@ -35,18 +36,30 @@ android {
 }
 
 def syncNativeLibs = tasks.register('syncNativeLibs') {
-    def outDir = file("${projectDir}/src/main/jniLibs/arm64-v8a")
-    inputs.dir(nativeBuildDir)
-    outputs.dir(outDir)
+    def arm64Out = file("${projectDir}/src/main/jniLibs/arm64-v8a")
+    def v7aOut = file("${projectDir}/src/main/jniLibs/armeabi-v7a")
+    inputs.dir(arm64BuildDir)
+    inputs.dir(v7aBuildDir)
+    outputs.dir(arm64Out)
+    outputs.dir(v7aOut)
     doLast {
-        outDir.mkdirs()
+        arm64Out.mkdirs()
         copy {
-            from file("${nativeBuildDir}/bin/sdl/libSDL3.so")
-            into outDir
+            from file("${arm64BuildDir}/bin/sdl/libSDL3.so")
+            into arm64Out
         }
         copy {
-            from file("${nativeBuildDir}/Foxcraft/libmain.so")
-            into outDir
+            from file("${arm64BuildDir}/Foxcraft/libmain.so")
+            into arm64Out
+        }
+        v7aOut.mkdirs()
+        copy {
+            from file("${v7aBuildDir}/bin/sdl/libSDL3.so")
+            into v7aOut
+        }
+        copy {
+            from file("${v7aBuildDir}/Foxcraft/libmain.so")
+            into v7aOut
         }
     }
 }
