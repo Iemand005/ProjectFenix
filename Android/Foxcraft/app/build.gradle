@@ -8,12 +8,13 @@ def resourcesDir = file("${projectFenix}/Foxcraft/resources")
 
 android {
     namespace = "org.libsdl.app"
-    compileSdk 25
+    compileSdk 35
     buildToolsVersion = "37.0.0"
+    ndkVersion "29.0.14206865"
     defaultConfig {
         applicationId "com.projectfenix.foxcraft"
         minSdk 24
-        targetSdk 25
+        targetSdk 35
         versionCode 1
         versionName "0.1.0"
     }
