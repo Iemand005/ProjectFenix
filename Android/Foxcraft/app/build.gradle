@@ -21,6 +21,10 @@ android {
         jniLibs.srcDirs = ['src/main/jniLibs']
         assets.srcDirs += resourcesDir
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildTypes {
         release {
             minifyEnabled false
