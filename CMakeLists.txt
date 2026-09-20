@@ -54,6 +54,8 @@ option(FE_EXCLUDE_OPENXR "Exclude OpenXR from the build" OFF)
 # GLFW/Vulkan/OpenXR headers never enter game-target translation units.
 if(ANDROID)
     add_compile_definitions(FE_EXCLUDE_GLFW FE_EXCLUDE_VULKAN)
+    # Ensure OpenXR is included for Android
+    set(FE_EXCLUDE_OPENXR OFF CACHE BOOL "" FORCE)
     if(FE_EXCLUDE_OPENXR)
         add_compile_definitions(FE_EXCLUDE_OPENXR)
     endif()
