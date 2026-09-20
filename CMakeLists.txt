@@ -70,8 +70,11 @@ endif()
 
 # set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build all libraries as shared" FORCE)
 
-# Windows 7 compatibility shim — forwards api-ms-win imports to kernel32.dll
-add_subdirectory(FenixEngine/external/win7compat)
+# Windows 7 compatibility shim — forwards api-ms-win imports to kernel32.dll.
+# MSVC-only: it needs lib.exe, which is not available on Android/other toolchains.
+if(MSVC)
+    add_subdirectory(FenixEngine/external/win7compat)
+endif()
 
 # Prepend our custom kernel32_win7.lib directory so the linker finds it FIRST,
 # before the Windows 10 SDK's kernel32.lib (which forwards through api-ms-win DLLs).
@@ -83,6 +86,10 @@ endif()
 # so the first project to run controls whether Jolt is included.
 
 add_subdirectory(Foxcraft)
+
+# The other projects are Windows/desktop-only (and pull in X11/PipeWire/Windows
+# platform code). On Android we only build Foxcraft (the SDL main library).
+if(NOT ANDROID)
 add_subdirectory(Cake)
 add_subdirectory(Tunnel)
 add_subdirectory(ShaderSavers)
@@ -96,6 +103,7 @@ else()
 	message(WARNING "Qt6 was not found. Skipping the Qt-dependent project, but configuring everything else.")
 endif()
 # add_subdirectory(Tunnel)
+endif()
 
 
 if(MSVC)
