@@ -1,5 +1,3 @@
-include ':app'
-
 pluginManagement {
     repositories {
         mavenCentral()
@@ -13,3 +11,5 @@ dependencyResolutionManagement {
         google()
     }
 }
+
+include ':app'
