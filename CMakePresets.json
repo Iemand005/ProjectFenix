@@ -141,6 +141,26 @@
 				"ANDROID_PLATFORM": "android-21",
 				"ANDROID_NATIVE_API_LEVEL": "21"
 			}
+		},
+		{
+			"name": "android-armeabi-v7a-flat",
+			"displayName": "Android armeabi-v7a flat (32-bit, no OpenXR, Debug)",
+			"description": "Compiles Foxcraft as a pure flat-screen libmain.so for armeabi-v7a with OpenXR excluded (no OpenXR loader, no XR runtime dependency)",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/android-armeabi-v7a-flat",
+			"environment": {
+				"ANDROID_NDK_ROOT": "C:\\Users\\Lasse\\AppData\\Local\\Android\\Sdk\\ndk\\29.0.14206865",
+				"ANDROID_NDK_HOME": "C:\\Users\\Lasse\\AppData\\Local\\Android\\Sdk\\ndk\\29.0.14206865"
+			},
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_TOOLCHAIN_FILE": "C:/Users/Lasse/AppData/Local/Android/Sdk/ndk/29.0.14206865/build/cmake/android.toolchain.cmake",
+				"CMAKE_MAKE_PROGRAM": "C:/Users/Lasse/AppData/Local/Android/Sdk/cmake/3.22.1/bin/ninja.exe",
+				"ANDROID_ABI": "armeabi-v7a",
+				"ANDROID_PLATFORM": "android-21",
+				"ANDROID_NATIVE_API_LEVEL": "21",
+				"FE_EXCLUDE_OPENXR": "ON"
+			}
 		}
 	],
 	"buildPresets": [
@@ -186,6 +206,11 @@
 			"name": "android-x86_64-debug",
 			"displayName": "Android x86_64 (Debug)",
 			"configurePreset": "android-x86_64-debug"
+		},
+		{
+			"name": "android-armeabi-v7a-flat",
+			"displayName": "Android armeabi-v7a flat (32-bit, no OpenXR)",
+			"configurePreset": "android-armeabi-v7a-flat"
 		}
 	]
 }

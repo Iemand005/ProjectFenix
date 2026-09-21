@@ -54,8 +54,12 @@ option(FE_EXCLUDE_OPENXR "Exclude OpenXR from the build" OFF)
 # GLFW/Vulkan/OpenXR headers never enter game-target translation units.
 if(ANDROID)
     add_compile_definitions(FE_EXCLUDE_GLFW FE_EXCLUDE_VULKAN)
-    # Ensure OpenXR is included for Android
-    set(FE_EXCLUDE_OPENXR OFF CACHE BOOL "" FORCE)
+    # Respect an explicitly requested flat (non-XR) Android build — e.g. preset
+    # android-armeabi-v7a-flat passes FE_EXCLUDE_OPENXR=ON. Default Android builds
+    # keep OpenXR included.
+    if(NOT FE_EXCLUDE_OPENXR)
+        set(FE_EXCLUDE_OPENXR OFF CACHE BOOL "" FORCE)
+    endif()
     if(FE_EXCLUDE_OPENXR)
         add_compile_definitions(FE_EXCLUDE_OPENXR)
     endif()
