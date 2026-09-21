@@ -31,7 +31,7 @@
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	],
 	"clangd.arguments": [
-		"--compile-commands-dir=build"
+		"--compile-commands-dir=J:\\ProjectFenix"
 	],
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**",

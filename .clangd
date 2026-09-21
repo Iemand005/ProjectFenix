@@ -5,6 +5,20 @@ CompileFlags:
   Compiler: clang-cl
   Add:
     - "-std:c++17"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/include"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/external"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/external/glm"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/external/imgui"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/external/cgltf"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/external/SDL/include"
+    - "-I"
+    - "J:/ProjectFenix/FenixEngine/src/Engine"
 If:
   PathMatch: [".*Foxcraft.*", ".*FenixEngine.*", ".*FenixEditor.*", ".*Tunnel.*", ".*ShaderSavers.*", ".*Labyrinth.*", ".*FoxRacing.*", ".*Atmosphere.*", ".*Cake.*"]
 
