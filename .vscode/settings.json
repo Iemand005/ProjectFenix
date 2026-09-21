@@ -59,5 +59,6 @@
 	// }
 
 	"git.detectSubmodulesLimit": 30,
-	"liveServer.settings.port": 5502
+	"liveServer.settings.port": 5502,
+	// "clangd.enableCodeCompletion": true
 }
