@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73d0b42-d6ea-447c-99e5-3c9e102d4085" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/FenixEngine" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FenixEngine/src/Engine/XRGame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine/src/Engine/XRGame.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FenixEngine/src/Engine/XRGame.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine/src/Engine/XRGame.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FenixEngine/src/Engine/window/Joystick.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine/src/Engine/window/Joystick.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foxcraft" beforeDir="false" afterPath="$PROJECT_DIR$/Foxcraft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foxcraft/Foxcraft.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Foxcraft/Foxcraft.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
