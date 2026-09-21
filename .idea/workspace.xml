@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73d0b42-d6ea-447c-99e5-3c9e102d4085" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FenixEngine" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FenixEngine/src/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FenixEngine/src/Engine/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foxcraft" beforeDir="false" afterPath="$PROJECT_DIR$/Foxcraft" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +18,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FenixEngine" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5,
@@ -38,7 +39,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "J:/ProjectFenix"
