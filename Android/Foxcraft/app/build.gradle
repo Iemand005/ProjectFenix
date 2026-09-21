@@ -10,7 +10,7 @@ def resourcesDir = file("${projectFenix}/Foxcraft/resources")
 def stagedAssetsDir = file("${projectDir}/build/generated/stagedAssets")
 
 android {
-    namespace = "org.libsdl.app"
+    namespace = "be.lasse.foxcraft"
     compileSdk 35
     buildToolsVersion = "37.0.0"
     ndkVersion "29.0.14206865"
