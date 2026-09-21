@@ -1,9 +1,17 @@
 CompileFlags:
-  Add: ["-DTEST_MARKER_FOX"]
+  Add: ["-DTEST_MARKER_GLOBAL_NOIF"]
+If:
+  PathMatch: [FenixWeb]
+---
+CompileFlags:
+  Add: ["-DTEST_MARKER_FENIXWEB_IF"]
+If:
+  PathMatch: [FenixWeb]
+---
+CompileFlags:
+  Add: ["-DTEST_MARKER_FOXCRAFT_IF"]
 If:
   PathMatch: [Foxcraft]
 ---
 CompileFlags:
-  Add: ["-DTEST_MARKER_FENIXWEB"]
-If:
-  PathMatch: [FenixWeb]
+  Add: ["-DTEST_MARKER_GLOBAL_BARE"]
