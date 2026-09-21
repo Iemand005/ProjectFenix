@@ -31,8 +31,7 @@
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	],
 	"clangd.arguments": [
-		"--compile-commands-dir=build",
-		"-std=c++20"
+		"--compile-commands-dir=build"
 	],
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**",
