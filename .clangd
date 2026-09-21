@@ -1,17 +1,24 @@
 CompileFlags:
-  Add: ["-DTEST_MARKER_GLOBAL_NOIF"]
+  Add: ["-DTEST_A"]
 If:
-  PathMatch: [FenixWeb]
+  PathMatch: [".*Foxcraft.*"]
 ---
 CompileFlags:
-  Add: ["-DTEST_MARKER_FENIXWEB_IF"]
+  Add: ["-DTEST_B"]
 If:
-  PathMatch: [FenixWeb]
+  PathMatch: ["Foxcraft/"]
 ---
 CompileFlags:
-  Add: ["-DTEST_MARKER_FOXCRAFT_IF"]
+  Add: ["-DTEST_C"]
 If:
-  PathMatch: [Foxcraft]
+  PathMatch: ["Chunk.cpp"]
 ---
 CompileFlags:
-  Add: ["-DTEST_MARKER_GLOBAL_BARE"]
+  Add: ["-DTEST_D"]
+If:
+  PathMatch: ["J:/ProjectFenix/Foxcraft"]
+---
+CompileFlags:
+  Add: ["-DTEST_E"]
+If:
+  PathMatch: [".*main\\.cpp"]
