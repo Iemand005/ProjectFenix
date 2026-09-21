@@ -60,11 +60,5 @@
 	// }
 
 	"git.detectSubmodulesLimit": 30,
-	"liveServer.settings.port": 5502,
-	// "clangd.enableCodeCompletion": true
-	// clangd.com`
-	"clangd.arguments": [
-    "--compile-commands-dir=${workspaceFolder}",
-    "-std=c++20"
-  ]
+	"liveServer.settings.port": 5502
 }
