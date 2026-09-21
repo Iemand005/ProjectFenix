@@ -1,44 +1,9 @@
-# Native Windows / MSVC projects: use the clang-cl driver so MSVC-style flags in
-# compile_commands.json (e.g. /std:c++17, /EHsc, /external:I) are honored without
-# dropping them as "unknown arguments". clang-cl defaults to C++17 with /std:c++17.
 CompileFlags:
-  Compiler: clang-cl
-  Add:
-    - "-std:c++17"
+  Add: ["-DTEST_MARKER_FOX"]
 If:
-  PathMatch: [Foxcraft, FenixEngine, FenixEditor, Tunnel, ShaderSavers, Labyrinth, FoxRacing, Atmosphere, Cake]
-
+  PathMatch: [Foxcraft]
 ---
-# Emscripten web build (FenixWeb): no compile_commands.json entry, so provide the
-# emscripten includes/defines manually. Must stay scoped away from native code,
-# otherwise it poisons the MSVC standard library headers.
 CompileFlags:
-  Add:
-    - "-D__EMSCRIPTEN__"
-    - "-DFE_EXCLUDE_GLFW"
-    - "-DFE_EXCLUDE_VULKAN"
-    - "-DFE_EXCLUDE_JOLT"
-    - "-DFE_EXCLUDE_OPENXR"
-    - "-DFE_EXCLUDE_SDL"
-    - "-D_ENABLE_EXTENDED_ALIGNED_STORAGE"
-    - "-DEXCLUDE_JOLT"
-    - "-isystem"
-    - "J:/emsdk/upstream/emscripten/cache/sysroot/include"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/include"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/external"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/external/glm"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/external/imgui"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/external/cgltf"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/external/SDL/include"
-    - "-I"
-    - "J:/ProjectFenix/FenixEngine/src/Engine"
-    - "-I"
-    - "J:/ProjectFenix/FenixWeb"
+  Add: ["-DTEST_MARKER_FENIXWEB"]
 If:
   PathMatch: [FenixWeb]
