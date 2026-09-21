@@ -28,3 +28,6 @@
 [submodule "FenixWeb"]
 	path = FenixWeb
 	url = https://github.com/Iemand005/FenixWeb
+[submodule "Android"]
+	path = Android
+	url = https://github.com/Iemand005/FenixAndroid/
