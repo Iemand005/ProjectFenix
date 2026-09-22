@@ -8,6 +8,14 @@ CompileFlags:
   Compiler: clang-cl
   Add:
     - "-std:c++17"
+    # Dead-code diagnostics MSVC lacks. Note: these only fire for private fields of
+    # trivial/copyable types never read (non-trivial members like std::vector are
+    # exempt, and a ctor-body write counts as a use) and for members/functions of
+    # local/anonymous types. External-linkage header classes are exempt by design,
+    # so no false positives there.
+    - "-Wunused-private-field"
+    - "-Wunused-member-function"
+    - "-Wunused-function"
 If:
   PathMatch: [".*Foxcraft.*", ".*FenixEngine.*", ".*FenixEditor.*", ".*Tunnel.*", ".*ShaderSavers.*", ".*Labyrinth.*", ".*FoxRacing.*", ".*Atmosphere.*", ".*Cake.*"]
 
