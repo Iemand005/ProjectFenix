@@ -19,6 +19,7 @@ If:
 CompileFlags:
   Add:
     - "-std=c++17"
+    - "-Wunused-variable"
     - "-D__EMSCRIPTEN__"
     - "-DFE_EXCLUDE_GLFW"
     - "-DFE_EXCLUDE_VULKAN"
