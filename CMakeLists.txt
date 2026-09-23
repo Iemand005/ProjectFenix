@@ -74,6 +74,15 @@ if(NOT EMSCRIPTEN)
     set(FE_EXCLUDE_KISSFFT OFF CACHE BOOL "Exclude kissfft from the build" FORCE)
 endif()
 
+# ShaderSavers forces FE_EXCLUDE_OPENXR=ON, which poisons the shared cache.
+# The meta build's desktop games link the OpenXR loader, and Engine's
+# add_compile_definitions(FE_EXCLUDE_OPENXR) runs after add_library(Engine),
+# so the define never reaches the target — leaving xr* calls compiled in but
+# unlinked (LNK2019). Pin the canonical desktop value before any subproject.
+if(NOT ANDROID AND NOT EMSCRIPTEN)
+    set(FE_EXCLUDE_OPENXR OFF CACHE BOOL "Exclude OpenXR from the build" FORCE)
+endif()
+
 # set(FE_INCLUDE_OPENVR ON CACHE BOOL "Include OpenVR" FORCE)
 
 # Force a consistent MSVC runtime across all subprojects to avoid
