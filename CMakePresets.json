@@ -179,11 +179,6 @@
 			"configurePreset": "android-arm64-release"
 		},
 		{
-			"name": "android-armeabi-v7a-debug",
-			"displayName": "Android armeabi-v7a (Debug)",
-			"configurePreset": "android-armeabi-v7a-debug"
-		},
-		{
 			"name": "android-x86_64-debug",
 			"displayName": "Android x86_64 (Debug)",
 			"configurePreset": "android-x86_64-debug"
