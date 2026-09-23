@@ -31,3 +31,6 @@
 [submodule "Android"]
 	path = Android
 	url = https://github.com/Iemand005/FenixAndroid/
+[submodule "HeliosFenix"]
+	path = HeliosFenix
+	url = https://github.com/Iemand005/HeliosFenix
