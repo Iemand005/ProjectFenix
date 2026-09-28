@@ -52,7 +52,7 @@
 			"generator": "Ninja",
 			"binaryDir": "${sourceDir}/build/emscripten-debug",
 			"cacheVariables": {
-				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+				"CMAKE_TOOLCHAIN_FILE": "${sourceDir}/../emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
 				"CMAKE_BUILD_TYPE": "Debug"
 			}
 		},
@@ -62,7 +62,7 @@
 			"generator": "Ninja",
 			"binaryDir": "${sourceDir}/build/emscripten-release",
 			"cacheVariables": {
-				"CMAKE_TOOLCHAIN_FILE": "J:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+				"CMAKE_TOOLCHAIN_FILE": "${sourceDir}/../emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
 				"CMAKE_BUILD_TYPE": "Release"
 			}
 		},
