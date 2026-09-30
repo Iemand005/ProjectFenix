@@ -8,3 +8,4 @@ gradle
 .gradle
 gradle-home
 *.so
+enc_temp_folder
