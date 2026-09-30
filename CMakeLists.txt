@@ -1,5 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
 
+# Hot Reload (Edit & Continue) needs CMP0141. With the 3.16 policy version above,
+# CMake 3.24+ leaves CMAKE_MSVC_DEBUG_INFORMATION_FORMAT_DEFAULT empty, which makes
+# it silently ignore CMAKE_MSVC_DEBUG_INFORMATION_FORMAT and the
+# MSVC_DEBUG_INFORMATION_FORMAT target property, leaving Debug on /Zi (/Z7).
+# Flip just this one policy rather than raising cmake_minimum_required, which
+# would also change CMP0091 (MSVC runtime) and every other unrelated default.
+if(POLICY CMP0141)
+    cmake_policy(SET CMP0141 NEW)
+endif()
+
 # Nuke Windows API-set injection from the ground up — must be BEFORE project()
 #set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX "${CMAKE_CURRENT_SOURCE_DIR}/cxx_override.cmake")
 
@@ -40,11 +50,11 @@ if(MSVC)
     # <GenerateDebugInformation> and <LinkIncremental>true</LinkIncremental>.
     #
     # Only the compile half needs fixing. CMake honours
-    # CMAKE_MSVC_DEBUG_INFORMATION_FORMAT with the Visual Studio generator,
-    # which is what the "Latest MSVC" preset uses. /ZI is a hard cl.exe error
-    # next to /GL (D8016), and link.exe silently drops /INCREMENTAL and
-    # /EDITANDCONTINUE under /LTCG or /OPT:ICF (LNK4075) — both of which the
-    # preset sets for Release — so this has to be Debug-only.
+    # CMAKE_MSVC_DEBUG_INFORMATION_FORMAT (see CMP0141 above) with the Visual
+    # Studio generator, which is what the "Latest MSVC" preset uses. /ZI is a
+    # hard cl.exe error next to /GL (D8016), and link.exe silently drops
+    # /INCREMENTAL and /EDITANDCONTINUE under /LTCG or /OPT:ICF (LNK4075) — both
+    # of which the preset sets for Release — so this has to be Debug-only.
     set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT
         "$<IF:$<CONFIG:Debug>,EditAndContinue,ProgramDatabase>")
     # Large objects (needed once unity builds merge many .cpp files)
