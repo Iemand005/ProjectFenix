@@ -29,6 +29,24 @@ if(MSVC)
     set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
     # Skip minimal-rebuild bookkeeping
     add_compile_options(/Gm-)
+
+    # --- Hot Reload (Edit & Continue) ---
+    # Visual Studio's Hot Reload refuses to run unless the project is built with
+    #   C/C++ > General > Debug Information Format = "Program Database for Edit and
+    #   Continue" (/ZI)  and  Linker > General > Enable Incremental Linking = Yes
+    #   (/INCREMENTAL).
+    # The linker half already holds: CMake's default Debug linker flags are
+    # "/debug /INCREMENTAL", which the VS generator folds into
+    # <GenerateDebugInformation> and <LinkIncremental>true</LinkIncremental>.
+    #
+    # Only the compile half needs fixing. CMake honours
+    # CMAKE_MSVC_DEBUG_INFORMATION_FORMAT with the Visual Studio generator,
+    # which is what the "Latest MSVC" preset uses. /ZI is a hard cl.exe error
+    # next to /GL (D8016), and link.exe silently drops /INCREMENTAL and
+    # /EDITANDCONTINUE under /LTCG or /OPT:ICF (LNK4075) — both of which the
+    # preset sets for Release — so this has to be Debug-only.
+    set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT
+        "$<IF:$<CONFIG:Debug>,EditAndContinue,ProgramDatabase>")
     # Large objects (needed once unity builds merge many .cpp files)
     add_compile_options(/bigobj)
 
@@ -111,6 +129,8 @@ endif()
 # so the first project to run controls whether Jolt is included.
 
 add_subdirectory(Foxcraft)
+get_target_property(_ecdbg Foxcraft MSVC_DEBUG_INFORMATION_FORMAT)
+message(STATUS "ECDBG var='${CMAKE_MSVC_DEBUG_INFORMATION_FORMAT}' target='${_ecdbg}'")
 
 # The other projects are Windows/desktop-only (and pull in X11/PipeWire/Windows
 # platform code). On Android we only build Foxcraft (the SDL main library).
