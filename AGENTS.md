@@ -1,0 +1,1 @@
+Do not do anything when storage is full. Abort. Just abort.
