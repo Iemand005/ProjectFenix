@@ -129,8 +129,6 @@ endif()
 # so the first project to run controls whether Jolt is included.
 
 add_subdirectory(Foxcraft)
-get_target_property(_ecdbg Foxcraft MSVC_DEBUG_INFORMATION_FORMAT)
-message(STATUS "ECDBG var='${CMAKE_MSVC_DEBUG_INFORMATION_FORMAT}' target='${_ecdbg}'")
 
 # The other projects are Windows/desktop-only (and pull in X11/PipeWire/Windows
 # platform code). On Android we only build Foxcraft (the SDL main library).
