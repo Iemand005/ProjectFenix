@@ -166,3 +166,25 @@ if(MSVC)
     string(REPLACE "/Wall" "/W3" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" CACHE STRING "" FORCE)
 endif()
+
+# --- Unity builds ---
+# With one .cpp per file, touching a widely-included header (Mesh.hpp,
+# VulkanDevice.hpp, Renderer.hpp, ...) recompiles every translation unit that
+# sees it. Unity blobs merge N sources into one TU, so the same header edit
+# rebuilds a handful of blobs instead. This composes with /ZI Hot Reload: the
+# edit-and-continue link just patches the blob that contains the edited file.
+#
+# Set per-target rather than via CMAKE_UNITY_BUILD so the vendored libraries
+# (SDL, Jolt, OpenXR) keep their own build settings — SDL already opts out, and
+# forcing unity on third-party code buys nothing since it is never edited here.
+foreach(fe_unity_target
+        Engine Renderer
+        Foxcraft Cake Tunnel Labyrinth Atmosphere FoxRacing Helios
+        ShaderSaver FenixWeb)
+    if(TARGET ${fe_unity_target})
+        set_target_properties(${fe_unity_target} PROPERTIES
+            UNITY_BUILD ON
+            UNITY_BUILD_BATCH_SIZE 8
+        )
+    endif()
+endforeach()
