@@ -71,6 +71,11 @@ add_compile_definitions(
     _WIN32_WINNT=0x0601
     WINVER=0x0601
     NTDDI_VERSION=0x06010000
+    # Stops <windows.h> from dragging in winsock.h (the v1 header) alongside
+    # networking/udp.hpp's <winsock2.h>. Separate translation units never
+    # noticed because each one only ever saw one of the two; a unity blob
+    # that has both produces "struct type redefinition" in ws2def.h.
+    WIN32_LEAN_AND_MEAN
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -188,3 +193,20 @@ foreach(fe_unity_target
         )
     endif()
 endforeach()
+
+# Dear ImGui is vendored third-party code that each target compiles its own copy
+# of (Engine, Foxcraft, pool, ... all glob it separately). Its .cpp files define
+# IMGUI_DEFINE_MATH_OPERATORS right before including imgui.h, and
+# imgui_internal.h hard-errors if that define did not come first. In a separate
+# TU nothing else has included imgui.h yet, so it works; in a unity blob an
+# engine file that includes imgui.h earlier in the block breaks every ImGui
+# file after it. Opt all of them out, in every target, via the absolute paths.
+file(GLOB fe_imgui_sources CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/FenixEngine/external/imgui/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/FenixEngine/external/imgui/backends/*.cpp"
+)
+if(fe_imgui_sources)
+    set_source_files_properties(${fe_imgui_sources} PROPERTIES
+        SKIP_UNITY_BUILD_INCLUSION ON
+    )
+endif()
