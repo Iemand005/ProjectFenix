@@ -17,7 +17,7 @@ CompileFlags:
     - "-Wunused-member-function"
     - "-Wunused-function"
 If:
-  PathMatch: [".*Foxcraft.*", ".*FenixEngine.*", ".*FenixEditor.*", ".*Tunnel.*", ".*ShaderSavers.*", ".*Labyrinth.*", ".*FoxRacing.*", ".*Atmosphere.*", ".*Cake.*"]
+  PathMatch: [".*Foxcraft.*", ".*FenixEngine.*", ".*FenixEditor.*", ".*Tunnel.*", ".*ShaderSavers.*", ".*Labyrinth.*", ".*FoxRacing.*", ".*Atmosphere.*", ".*Cake.*", ".*SuperFlight.*"]
 
 ---
 # Emscripten web build (FenixWeb): has no MSVC compile_commands.json entry, so provide the
