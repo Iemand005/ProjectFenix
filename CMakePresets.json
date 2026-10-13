@@ -36,6 +36,10 @@
 			"toolset": "host=x64",
 			"architecture": "x64",
 			"binaryDir": "${sourceDir}/build/${presetName}",
+			"environment": {
+				"VULKAN_SDK": "C:/VulkanSDK/1.4.363.0",
+				"PATH": "C:/VulkanSDK/1.4.363.0/Bin;$penv{PATH}"
+			},
 			"cacheVariables": {
 				"CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
 				"CMAKE_C_COMPILER": "cl.exe",
@@ -187,6 +191,26 @@
 			"name": "android-armeabi-v7a-flat",
 			"displayName": "Android armeabi-v7a flat (32-bit, no OpenXR)",
 			"configurePreset": "android-armeabi-v7a-flat"
+		},
+		{
+			"name": "SuperFlight-debug",
+			"displayName": "SuperFlight (Debug)",
+			"description": "Builds only the SuperFlight target with the MSVC 2026 toolset",
+			"configurePreset": "Latest MSVC",
+			"configuration": "Debug",
+			"targets": [
+				"SuperFlight"
+			]
+		},
+		{
+			"name": "SuperFlight-release",
+			"displayName": "SuperFlight (Release)",
+			"description": "Builds only the SuperFlight target (optimized) with the MSVC 2026 toolset",
+			"configurePreset": "Latest MSVC",
+			"configuration": "Release",
+			"targets": [
+				"SuperFlight"
+			]
 		}
 	]
 }
