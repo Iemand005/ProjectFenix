@@ -9,3 +9,14 @@ gradle
 gradle-home
 *.so
 enc_temp_folder
+
+# CMake-generated compile database: regenerated per machine, embeds absolute paths.
+compile_commands.json
+
+# Dear ImGui / editor state that embeds absolute paths or window positions.
+imgui.ini
+.idea/workspace.xml
+.vscode/tmstate.json
+
+# Logs.
+*.log
