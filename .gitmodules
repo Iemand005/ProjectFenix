@@ -37,3 +37,6 @@
 [submodule "SuperFlight"]
 	path = SuperFlight
 	url = https://github.com/Iemand005/SuperFlight
+[submodule "Assets"]
+	path = Assets
+	url = https://github.com/Iemand005/FenixAssetsLib
