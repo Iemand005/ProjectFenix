@@ -5,6 +5,9 @@
 # (see .vscode/settings.json -> clangd.arguments -> --compile-commands-dir),
 # so no project paths are hardcoded here.
 CompileFlags:
+  # Use the Ninja configuration; Visual Studio generators do not emit
+  # compile_commands.json, and the workspace-root copy may be stale.
+  CompilationDatabase: build/desktop-meta
   Compiler: clang-cl
   Add:
     - "-std:c++17"
