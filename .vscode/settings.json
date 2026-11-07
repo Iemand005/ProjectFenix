@@ -26,10 +26,13 @@
 	"C_Cpp.errorLimit": 100,
 	"output.smartScroll.enabled": false,
 	"cmake.configurePreset": "windows-msvc-2026",
+	"cmake.buildPreset": "SuperFlight-debug",
 	"cmake.configureArgs": [
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	],
-	"clangd.arguments": [],
+	"clangd.arguments": [
+		"--compile-commands-dir=${workspaceFolder}/build/desktop-meta"
+	],
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**",
 		"FenixEngine/external"

@@ -235,15 +235,6 @@
 			"targets": [
 				"SuperFlight"
 			]
-		},
-		{
-			"name": "SuperFlight-clangd-debug",
-			"displayName": "SuperFlight Debug (Ninja, clangd database)",
-			"description": "Builds SuperFlight and refreshes the Ninja compile database used by clangd",
-			"configurePreset": "windows-msvc-clangd",
-			"targets": [
-				"SuperFlight"
-			]
 		}
 	]
 }
