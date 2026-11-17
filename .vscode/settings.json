@@ -25,13 +25,13 @@
 	"C_Cpp.maxConcurrentThreads": 4,
 	"C_Cpp.errorLimit": 100,
 	"output.smartScroll.enabled": false,
-	// "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
-	// "cmake.generator": "Ninja",
+	"cmake.configurePreset": "windows-msvc-2026",
+	"cmake.buildPreset": "SuperFlight-debug",
 	"cmake.configureArgs": [
 		"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	],
 	"clangd.arguments": [
-		"--compile-commands-dir=${workspaceFolder}"
+		"--compile-commands-dir=${workspaceFolder}/build/desktop-meta"
 	],
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**",

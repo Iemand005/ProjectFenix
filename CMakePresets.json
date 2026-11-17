@@ -29,13 +29,13 @@
 			}
 		},
 		{
-			"name": "Latest MSVC",
-			"displayName": "Visual Studio Community 2026 Release - amd64",
-			"description": "Using compilers for Visual Studio 18 2026 (x64 architecture)",
+			"name": "windows-msvc-2026",
+			"displayName": "Windows MSVC 2026 (x64)",
+			"description": "Visual Studio 2026 multi-configuration build",
 			"generator": "Visual Studio 18 2026",
 			"toolset": "host=x64",
 			"architecture": "x64",
-			"binaryDir": "${sourceDir}/build/${presetName}",
+			"binaryDir": "${sourceDir}/build/windows-msvc-2026",
 			"environment": {
 				"VULKAN_SDK": "C:/VulkanSDK/1.4.363.0",
 				"PATH": "C:/VulkanSDK/1.4.363.0/Bin;$penv{PATH}"
@@ -48,6 +48,31 @@
 				"CMAKE_CXX_FLAGS_RELEASE": "/O2 /Ob2 /GL /Gw",
 				"CMAKE_EXE_LINKER_FLAGS_RELEASE": "/LTCG /OPT:REF /OPT:ICF",
 				"CMAKE_SHARED_LINKER_FLAGS_RELEASE": "/LTCG /OPT:REF /OPT:ICF"
+			}
+		},
+		{
+			"name": "windows-msvc-clangd",
+			"displayName": "Windows MSVC (Ninja, clangd database)",
+			"description": "Ninja build that generates compile_commands.json for clangd",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/desktop-meta",
+			"environment": {
+				"VULKAN_SDK": "C:/VulkanSDK/1.4.363.0",
+				"PATH": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64;C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja;C:/VulkanSDK/1.4.363.0/Bin;$penv{PATH}",
+				"INCLUDE": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um;C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\winrt",
+				"LIB": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\lib\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x64"
+			},
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+				"SUPERFLIGHT_USE_VULKAN": "ON",
+				"CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+				"CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+				"CMAKE_MAKE_PROGRAM": "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe",
+				"Vulkan_INCLUDE_DIR": "C:/VulkanSDK/1.4.363.0/Include",
+				"Vulkan_LIBRARY": "C:/VulkanSDK/1.4.363.0/Lib/vulkan-1.lib",
+				"Vulkan_GLSLANG_VALIDATOR_EXECUTABLE": "C:/VulkanSDK/1.4.363.0/Bin/glslangValidator.exe",
+				"Vulkan_GLSLC_EXECUTABLE": "C:/VulkanSDK/1.4.363.0/Bin/glslc.exe"
 			}
 		},
 		{
@@ -150,9 +175,9 @@
 	],
 	"buildPresets": [
 		{
-			"name": "Latest MSVC-debug",
-			"displayName": "Visual Studio Community 2026 Release - amd64 - Debug",
-			"configurePreset": "Latest MSVC",
+			"name": "windows-msvc-debug",
+			"displayName": "Windows MSVC Debug",
+			"configurePreset": "windows-msvc-2026",
 			"configuration": "Debug"
 		},
 		{
@@ -166,10 +191,10 @@
 			"configurePreset": "Emscripten-Release"
 		},
 		{
-			"name": "MSVC-Release",
+			"name": "windows-msvc-release",
 			"description": "Optimized Release build with MSVC (no debug info)",
-			"displayName": "MSVC Release",
-			"configurePreset": "Latest MSVC",
+			"displayName": "Windows MSVC Release",
+			"configurePreset": "windows-msvc-2026",
 			"configuration": "Release"
 		},
 		{
@@ -196,7 +221,7 @@
 			"name": "SuperFlight-debug",
 			"displayName": "SuperFlight (Debug)",
 			"description": "Builds only the SuperFlight target with the MSVC 2026 toolset",
-			"configurePreset": "Latest MSVC",
+			"configurePreset": "windows-msvc-2026",
 			"configuration": "Debug",
 			"targets": [
 				"SuperFlight"
@@ -206,7 +231,7 @@
 			"name": "SuperFlight-release",
 			"displayName": "SuperFlight (Release)",
 			"description": "Builds only the SuperFlight target (optimized) with the MSVC 2026 toolset",
-			"configurePreset": "Latest MSVC",
+			"configurePreset": "windows-msvc-2026",
 			"configuration": "Release",
 			"targets": [
 				"SuperFlight"
