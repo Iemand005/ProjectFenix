@@ -76,6 +76,28 @@
 			}
 		},
 		{
+			"name": "windows 10 MSVC",
+			"displayName": "Windows 10 MSVC (x64, BuildTools)",
+			"description": "Self-contained MSVC setup for this machine; no developer prompt required",
+			"generator": "Visual Studio 18 2026",
+			"toolset": "host=x64",
+			"architecture": "x64",
+			"binaryDir": "${sourceDir}/build/windows-10-msvc",
+			"environment": {
+				"VCToolsInstallDir": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.51.36231\\",
+				"VULKAN_SDK": "C:/VulkanSDK/1.4.363.0",
+				"PATH": "C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64;C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64;C:/VulkanSDK/1.4.363.0/Bin;$penv{PATH}",
+				"INCLUDE": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.51.36231\\include;C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Auxiliary\\VS\\include;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\um;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\shared;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\winrt;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\cppwinrt",
+				"LIB": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.51.36231\\lib\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.26100.0\\ucrt\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.26100.0\\um\\x64",
+				"LIBPATH": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.51.36231\\lib\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\UnionMetadata\\10.0.26100.0;C:\\Program Files (x86)\\Windows Kits\\10\\References\\10.0.26100.0;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+			},
+			"cacheVariables": {
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+				"CMAKE_C_COMPILER": "cl.exe",
+				"CMAKE_CXX_COMPILER": "cl.exe"
+			}
+		},
+		{
 			"name": "Emscripten-Debug",
 			"displayName": "Emscripten Debug",
 			"generator": "Ninja",
@@ -178,6 +200,12 @@
 			"name": "windows-msvc-debug",
 			"displayName": "Windows MSVC Debug",
 			"configurePreset": "windows-msvc-2026",
+			"configuration": "Debug"
+		},
+		{
+			"name": "windows 10 MSVC",
+			"displayName": "Windows 10 MSVC (Debug)",
+			"configurePreset": "windows 10 MSVC",
 			"configuration": "Debug"
 		},
 		{
