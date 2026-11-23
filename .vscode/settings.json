@@ -57,14 +57,5 @@
 		"button.hoverBackground": "#ff00a6",
 		"button.secondaryBackground": "#333333",
 		"button.secondaryForeground": "#ffffff"
-	},
-
-	// "cmake.generator": "Visual Studio 18 2026",
-	// "cmake.configureSettings": {
-	// 	// "CMAKE_GENERATOR_TOOLSET": "v141"
-	// 	"CMAKE_GENERATOR_TOOLSET": "v141,version=14.16.27023"
-	// }
-
-	"git.detectSubmodulesLimit": 30,
-	"liveServer.settings.port": 5502
+	}
 }
