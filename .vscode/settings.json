@@ -39,7 +39,6 @@
 		"FenixEngine/third_party"
 	],
 	"git.autoRepositoryDetection": "openEditors",
-	"git.detectSubmodulesLimit": 20,
 	"git.autofetch": false,
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#1d1d1d",
