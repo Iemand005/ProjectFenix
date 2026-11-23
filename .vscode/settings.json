@@ -39,6 +39,8 @@
 		"FenixEngine/third_party"
 	],
 	"git.autoRepositoryDetection": "openEditors",
+	"git.detectSubmodulesLimit": 20,
+	"git.autofetch": false,
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#1d1d1d",
 		"activityBar.foreground": "#f7f6f6",
@@ -59,6 +61,8 @@
 		"button.secondaryBackground": "#333333",
 		"button.secondaryForeground": "#ffffff"
 	},
+
+	"git.detectSubmodulesLimit": 30,
 
 	"liveServer.settings.port": 5502
 }
