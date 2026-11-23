@@ -42,4 +42,4 @@
 	url = https://github.com/Iemand005/FenixAssetsLib
 [submodule "SuperShot"]
 	path = SuperShot
-	url = ./SuperShot
+	url =  https://github.com/Iemand005/SuperShot
