@@ -3,6 +3,8 @@ if(TARGET emscripten_wasm_settings)
     return()
 endif()
 
+set(FE_WEBXR_JS_LIBRARY "${CMAKE_CURRENT_LIST_DIR}/FenixWeb/webxr_library.js" CACHE INTERNAL "Path to the WebXR Emscripten JS library")
+
 
 function(setup_emscripten_target target_name)
     if(NOT EMSCRIPTEN)
@@ -44,6 +46,10 @@ function(setup_emscripten_target target_name)
         -sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap,HEAPF32,HEAPU8
         -sEXPORTED_FUNCTIONS=_main,_emscripten_file_dialog_callback,_malloc,_free,_FE_AuraSetColor
     )
+
+    if(FE_INCLUDE_WEBXR AND EXISTS "${FE_WEBXR_JS_LIBRARY}")
+        target_link_options(${target_name} PRIVATE "--js-library=${FE_WEBXR_JS_LIBRARY}")
+    endif()
 
     if(ARG_RESOURCE_DIR)
         if(NOT EXISTS "${ARG_RESOURCE_DIR}")

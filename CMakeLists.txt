@@ -81,6 +81,11 @@ add_compile_definitions(
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(FE_EXCLUDE_OPENXR "Exclude OpenXR from the build" OFF)
+option(FE_INCLUDE_WEBXR "Include the WebXR backend for Emscripten builds" OFF)
+
+if(EMSCRIPTEN)
+    set(FE_INCLUDE_WEBXR ON)
+endif()
 
 # The Engine adds FE_EXCLUDE_* as directory-scoped defines, so sibling game
 # targets (Foxcraft -> libmain.so) never inherit them. Enforce globally so the
