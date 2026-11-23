@@ -57,5 +57,7 @@
 		"button.hoverBackground": "#ff00a6",
 		"button.secondaryBackground": "#333333",
 		"button.secondaryForeground": "#ffffff"
-	}
+	},
+
+	"liveServer.settings.port": 5502
 }
