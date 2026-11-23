@@ -40,3 +40,6 @@
 [submodule "Assets"]
 	path = Assets
 	url = https://github.com/Iemand005/FenixAssetsLib
+[submodule "SuperShot"]
+	path = SuperShot
+	url = ./SuperShot
