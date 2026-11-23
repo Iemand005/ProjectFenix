@@ -34,9 +34,15 @@
 		"--compile-commands-dir=${workspaceFolder}/build/desktop-meta"
 	],
 	"git.ignoredRepositories": [
-		"FenixEngine/**",
-		"FenixEngine/external",
-		"FenixEngine/third_party"
+		"FenixEngine/external/glfw",
+		"FenixEngine/external/imgui",
+		"FenixEngine/external/OpenXR-SDK",
+		"FenixEngine/external/JoltPhysics",
+		"FenixEngine/external/SDL",
+		"FenixEngine/external/glm",
+		"FenixEngine/external/kissfft",
+		"FenixEngine/external/openvr",
+		"FenixEngine/external/cgltf"
 	],
 	"git.autoRepositoryDetection": "openEditors",
 	"workbench.colorCustomizations": {
