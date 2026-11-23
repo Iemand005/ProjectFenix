@@ -35,7 +35,8 @@
 	],
 	"git.ignoredRepositories": [
 		"FenixEngine/external/**",
-		"FenixEngine/external"
+		"FenixEngine/external",
+		"FenixEngine/third_party"
 	],
 	"git.autoRepositoryDetection": "openEditors",
 	"workbench.colorCustomizations": {
